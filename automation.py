@@ -30,7 +30,7 @@ def configurar_driver():
 def carregar_palavras_arquivo(caminho):
     print(f"📂 Lendo planilha: {caminho}")
     try:
-        df = pd.read_excel(caminho, sheet_name="Página1")
+        df = pd.read_excel(caminho, sheet_name="Palavras-chave")
         print(f"📄 {len(df)} palavras-chave carregadas.")
         return df
     except Exception as e:
@@ -49,7 +49,7 @@ def analisar_resultado(driver, palavra):
         print("⚠️ Timeout esperando a página carregar...")
 
     # Espera aleatória para evitar detecção
-    espera = random.uniform(7, 12)
+    espera = random.uniform(1, 5)
     print(f"⏱️ Aguardando {espera:.2f}s...")
     time.sleep(espera)
 
